@@ -5,8 +5,6 @@ class TwitchPost(models.Model):
     GAME_TAG=(('valorant','ヴァロラント'),
               ('chat','雑談'),
               ('summonerswar','サマナーズウォー'),
-              ('fortnite','フォートナイト'),
-              ("apex","エイペックス"),
               ("minecarft","マインクラフト"))
     channel_name = models.CharField(
         verbose_name='チャンネル名',

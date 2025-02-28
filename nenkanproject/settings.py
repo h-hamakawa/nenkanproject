@@ -39,7 +39,6 @@ INSTALLED_APPS = [
     'django.contrib.staticfiles',
     'Twitchapp.apps.TwitchappConfig',
     'accounts.apps.AccountsConfig',
-        'widget_tweaks',
 ]
 
 MIDDLEWARE = [

@@ -1,0 +1,12 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contents %}
+<div class="container mt-5">
+    <!-- プロフィール情報 -->
+    <div class="profile-detail">
+        <img src="{{ profile.icon.url }}" alt="プロフィールアイコン" class="profile-icon">
+        <h1 class="profile-name">{{ profile.profile_user.username }}</h1>
+        <p class="follower-count">フォロワー: 0人</p>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}プロフィール作成{%endblock%}
+{% block contents %}
+<link rel="stylesheet" href="{% static 'css/profile_create-style.css' %}">
+
+<div class="profile-create-container">
+  <h1>初めてのログイン</h1>
+    <h2>プロフィール作成してください。</h2>
+    <form method="POST" enctype="multipart/form-data">
+        {% csrf_token %}
+        <table class="profile-table">
+            <tr>
+                <th>アイコン:</th>
+                <td>{{ form.icon }}</td>
+            </tr>
+            <tr>
+                <th>ステータス:</th>
+                <td>{{ form.status_message }}</td>
+            </tr>
+        </table>
+        <hr>
+        <button type="submit" class="submit-button">設定する</button>
+    </form>
+</div>
+{% endblock %}

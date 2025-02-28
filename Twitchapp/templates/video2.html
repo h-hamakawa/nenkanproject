@@ -1,0 +1,53 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block contents %}
+<link rel="stylesheet" href="{% static 'css/video_page-style.css' %}">
+
+<div class="video-page-container">
+    <!-- 左側: 動画プレイヤー -->
+    <div class="video-player-section">
+        <video controls autoplay loop>
+            <source src="{{ video.movie.url }}" type="video/mp4">
+            お使いのブラウザは video タグをサポートしていません。
+        </video>
+    </div>
+
+    <!-- 右側: チャット欄 (fixed-top) -->
+    <div class="comment-section">
+        <h3>チャット</h3>
+        <div class="comment-list" id="comment-list">
+            <!-- コメントの表示 -->
+            {% for comment in comments %}
+            <p><strong>{{ comment.user.username }}</strong>: {{ comment.text }}</p>
+            {% endfor %}
+        </div>
+        <form id="comment-form">
+            {% csrf_token %}
+            <textarea id="comment-text" rows="3" placeholder="コメントを入力..."></textarea>
+            <button type="submit" class="comment-button">送信</button>
+        </form>
+    </div>
+</div>
+
+<script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+<script>
+    $(document).ready(function(){
+        $('#comment-form').on('submit', function(event){
+            event.preventDefault();
+            $.ajax({
+                type: 'POST',
+                url: "{% url 'Twitchapp:post_comment' video.pk %}",
+                data: {
+                    'csrfmiddlewaretoken': '{{ csrf_token }}',
+                    'comment': $('#comment-text').val(),
+                },
+                success: function(response){
+                    if(response.status === 'success'){
+                        location.reload();
+                    }
+                }
+            });
+        });
+    });
+</script>
+{% endblock %}

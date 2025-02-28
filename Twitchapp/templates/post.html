@@ -1,0 +1,35 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}投稿ページ{%endblock%}
+{% block contents %}
+<link rel="stylesheet" href="{% static 'css/post-style.css' %}">
+
+<div class="post-container">
+    <h2 class="post-title">動画の投稿</h2>
+    <form method="post" enctype="multipart/form-data" class="post-form">
+        {% csrf_token %}
+        
+        <div class="form-group">
+            <label for="movie_title" class="form-label">タイトル</label>
+            {{ form.movie_title }}
+        </div>
+
+        <div class="form-group">
+            <label for="content" class="form-label">説明文</label>
+            {{ form.content }}
+        </div>
+
+        <div class="form-group">
+            <label for="category" class="form-label">ゲームタグ</label>
+            {{ form.category }}
+        </div>
+
+        <div class="form-group">
+            <label for="movie" class="form-label">動画ファイル</label>
+            {{ form.movie }}
+        </div>
+
+        <button type="submit" class="submit-button">投稿する</button>
+    </form>
+</div>
+{% endblock %}

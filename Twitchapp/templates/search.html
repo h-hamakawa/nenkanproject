@@ -1,0 +1,34 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}検索結果{%endblock%}
+{% block contents %}
+<link rel="stylesheet" href="{% static 'css/search-style.css' %}">
+<div class="container mt-5">
+    <h2>ユーザー検索結果</h2>
+    <p>"{{ query }}" の検索結果:</p>
+
+    <div class="user-grid">
+        {% for user in users %}
+        <div class="user-card">
+            <!-- アイコン -->
+            <img src="{{ user.profile.icon.url }}" alt="{{ user.username }}のアイコン" class="user-icon">
+            
+            <!-- ユーザー名 (プロフィールリンク) -->
+            <h3 class="username">
+                    <a href="{% url 'Twitchapp:profile_detail' user.pk %}">{{ user.username }}</a>
+            </h3>
+
+            <!-- フォロワー数 -->
+            <p class="follower-count">
+                フォロワー: {{ user.profile.follower_count }}人
+            </p>
+
+            <!-- フォローボタン -->
+            <button class="follow-button">フォロー</button>
+        </div>
+        {% empty %}
+        <p>ユーザーが見つかりませんでした。</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

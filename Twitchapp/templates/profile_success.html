@@ -1,0 +1,14 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}更新完了{%endblock%}
+{% block contents %}
+<link rel="stylesheet" href="{% static 'css/profile_success-style.css' %}">
+
+<div class="success-message-container">
+    <p class="success-text">プロフィールを更新しました。</p>
+    <div class="link-container">
+        <a href="{% url 'Twitchapp:profile' %}" class="back-link">プロフィールを見る</a>
+        <a href="{% url 'Twitchapp:index' %}" class="back-link">トップに戻る</a>
+    </div>
+</div>
+{% endblock %}

@@ -1,0 +1,26 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ selected_tag }} の動画一覧{% endblock %}
+{% block contents %}
+<link rel="stylesheet" href="{% static 'css/contents-style.css' %}">
+
+<div class="contents-container">
+    <h1 class="contents-title">{{ selected_tag }} の動画一覧</h1>
+    <div class="video-grid">
+        {% for video in videos %}
+        <div class="video-card">
+            <a href="{% url 'Twitchapp:video_detail' video.pk %}">
+                <video controls class="video-player">
+                    <source src="{{ video.movie.url }}" type="video/mp4">
+                    お使いのブラウザは video タグをサポートしていません。
+                </video>
+                <p class="video-title">{{ video.movie_title }}</p>
+                <p class="video-author">{{ video.user.username }}さん</p>
+            </a>
+        </div>
+        {% empty %}
+        <p class="no-videos">現在、{{ selected_tag }} の動画はありません。</p>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

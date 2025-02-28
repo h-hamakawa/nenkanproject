@@ -7,7 +7,6 @@ urlpatterns = [
     path('register/',
          views.SignUpView.as_view(),
          name='register'),
-
     path('signup_success/',
          views.SignUpSuccessView.as_view(),
          name='signup_success'),

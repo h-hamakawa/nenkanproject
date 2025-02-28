@@ -1,0 +1,139 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #F2F2F2;
+    color: #000;
+    margin: 0;
+    padding: 0;
+    overflow-x: hidden;
+    padding-top: 80px;
+    padding-left: 240px;
+}
+
+.profile-header {
+    display: flex;
+    align-items: center;
+    padding: 20px;
+    background-color: #fff;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.profile-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 20px;
+}
+
+.profile-info {
+    flex-grow: 1;
+}
+
+.profile-name {
+    font-size: 2em;
+    margin: 0;
+    display: flex;
+    align-items: center;
+}
+
+.verified-badge {
+    color: #9146FF;
+    font-size: 0.8em;
+    margin-left: 5px;
+}
+
+.follower-count {
+    color: #666;
+}
+
+.profile-buttons {
+    display: flex;
+    gap: 10px;
+}
+
+.follow-button {
+    background-color: #9146FF;
+    color: #fff;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.subscribe-button {
+    background-color: #ffcc00;
+    color: #000;
+    border: none;
+    padding: 10px 20px;
+    border-radius: 4px;
+    cursor: pointer;
+}
+
+.navigation-tabs {
+    display: flex;
+    gap: 20px;
+    padding: 0 20px;
+    border-bottom: 1px solid #eee;
+}
+
+.tab {
+    text-decoration: none;
+    color: #666;
+    padding: 10px;
+    transition: color 0.3s;
+}
+
+.tab.active {
+    color: #9146FF;
+    border-bottom: 2px solid #9146FF;
+}
+
+.tab:hover {
+    color: #9146FF;
+}
+
+.highlight-section {
+    padding: 20px;
+    background: #fff;
+    border-top: 2px solid #f4f4f9;
+}
+
+.clip-grid {
+    display: flex;
+    gap: 20px;
+}
+
+.clip {
+    width: 30%;
+    background: #f4f4f9;
+    border-radius: 10px;
+    overflow: hidden;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.clip video {
+    width: 100%;
+    border-bottom: 1px solid #f4f4f9;
+}
+
+.clip-title {
+    font-weight: bold;
+    padding: 10px;
+}
+
+.clip-author {
+    color: #666;
+    padding: 0 10px 10px;
+}
+
+.follow-button {
+    background-color: #9146FF;
+    color: #fff;
+    border: none;
+    padding: 5px 15px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.follow-button:hover {
+    background-color: #772ce8;
+}

@@ -1,0 +1,62 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}{{ profile.profile_user.username }}{%endblock%}
+{% block contents %}
+<link rel="stylesheet" href="{% static 'css/profile-style.css' %}">
+
+<!-- プロフィールセクション -->
+<header class="profile-header">
+    <!-- アイコンを表示 -->
+    <img src="{{ profile.icon.url }}" alt="プロフィールアイコン" class="profile-icon">
+    
+    <!-- ユーザー名を表示 -->
+    <div class="profile-info">
+        <h1 class="profile-name">{{ profile.profile_user.username }} <span class="verified-badge">✔️</span></h1>
+        <p class="follower-count">{{ followers_count }} 人のフォロワー</p>
+    </div>
+    
+    <!-- フォロー・サブスクボタン -->
+    <div class="profile-buttons">
+        <form action="{% url 'Twitchapp:follow_toggle' profile.profile_user.pk %}" method="post">
+            {% csrf_token %}
+            {% if is_following %}
+                <button type="submit" class="follow-button">フォロー解除</button>
+            {% else %}
+                <button type="submit" class="follow-button">フォローする</button>
+            {% endif %}
+        </form>
+        <button class="subscribe-button">サブスクを贈る</button>
+    </div>
+</header>
+
+<!-- ナビゲーションタブ -->
+<nav class="navigation-tabs">
+    <a href="#" class="tab active">ホーム</a>
+    <a href="#" class="tab">クリエーターについて</a>
+    <a href="#" class="tab">スケジュール</a>
+    <a href="#" class="tab">ビデオ</a>
+    <a href="#" class="tab">チャット</a>
+</nav>
+
+<!-- コンテンツエリア -->
+<div class="content-wrapper">
+    <div class="highlight-section">
+        <h2>自分の投稿動画</h2>
+        <div class="clip-grid">
+            <!-- 自分が投稿した動画をループ表示 -->
+            {% for video in videos %}
+            <div class="clip">
+                <a href="{% url 'Twitchapp:video_detail' video.pk %}">
+                    <video controls autoplay loop muted>
+                        <source src="{{ video.movie.url }}" type="video/mp4">
+                        お使いのブラウザは video タグをサポートしていません。
+                    </video>
+                </a>
+                <p class="clip-title">{{ video.movie_title }}</p>
+                <p class="clip-author">{{ video.user.username }}さん</p>
+            </div>
+            {% endfor %}
+        </div>
+    </div>
+</div>
+{% endblock %}

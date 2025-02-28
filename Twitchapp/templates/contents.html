@@ -1,0 +1,20 @@
+{% extends 'base.html' %}
+{% load static %}
+{% block title %}コンテンツを探す{% endblock %}
+{% block contents %}
+<link rel="stylesheet" href="{% static 'css/contents-style.css' %}">
+
+<div class="contents-container">
+    <h1 class="contents-title">コンテンツを探す</h1>
+    <div class="game-grid">
+        {% for tag, name in game_tags %}
+            <div class="game-card">
+                <a href="{% url 'Twitchapp:game_tag_videos' game_tag=tag %}">
+                    <img src="{% static 'img/' %}{{ tag }}.jpg" alt="{{ name }}" class="game-image">
+                    <p class="game-name">{{ name }}</p>
+                </a>
+            </div>
+        {% endfor %}
+    </div>
+</div>
+{% endblock %}

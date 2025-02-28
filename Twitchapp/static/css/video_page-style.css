@@ -1,0 +1,102 @@
+.video-page-container {
+    display: flex;
+    justify-content: space-between;
+
+}
+body { 
+padding-top: 52px;
+padding-left: 226px;
+ }
+
+.video-player-section {
+    width: 69%;
+}
+
+.video-player-section video {
+    width: 100%;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.comment-section {
+    width: 25%;
+    position: fixed;
+    right: 0px;
+    top: 80px;
+    background-color: #f4f4f9;
+    padding: 15px;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    max-height: 70vh;
+    overflow-y: auto;
+}
+
+.comment-section h3 {
+    font-size: 1.2em;
+    margin-bottom: 10px;
+}
+
+.comment-section textarea {
+    width: 100%;
+    resize: none;
+    border-radius: 5px;
+    border: 1px solid #ccc;
+    padding: 10px;
+    margin-bottom: 10px;
+}
+
+.comment-button {
+    background-color: #9146FF;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+}
+
+.comment-button:hover {
+    background-color: #772ce8;
+}
+
+.video-profile-section {
+    padding: 20px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+}
+
+.profile-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-right: 15px;
+}
+
+.profile-name {
+    display: inline-block;
+    font-size: 1.5em;
+}
+
+.profile-buttons {
+    margin-top: 10px;
+}
+
+.follow-button,
+.subscribe-button {
+    background-color: #9146FF;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-right: 10px;
+}
+
+.follow-button:hover,
+.subscribe-button:hover {
+    background-color: #772ce8;
+}
+
+
+
+
+

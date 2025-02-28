@@ -2,15 +2,21 @@
 body {
     font-family: Arial, sans-serif;
     background-color: #18181b; /* Twitchのダークテーマの背景色 */
-    color: #f4f4f4; /* 白に近い文字色 */
+    color: #000000; /* 白に近い文字色 */
     margin: 0;
-    padding: 0;
 }
+body {
+    padding-top: 50px;
+    padding-left: 150px;
+  }
 
 header {
     background-color: #9147ff; /* Twitchの代表的な紫色 */
     padding: 20px;
-    text-align: center;
+
+    /* 左寄せ */
+    display: flex;
+    justify-content: space-between;
 }
 
 header h1 {
@@ -18,6 +24,8 @@ header h1 {
     color: white;
     font-size: 2.5rem;
 }
+
+  
 
 /* ホームアイコン */
 header a img {
@@ -30,9 +38,11 @@ header a img {
 
 
 .container {
-    width: 80%;
+    width: 67%;
     margin: auto;
-    padding: 20px;
+    padding-left: 100px;
+    padding-right: 100px;
+    padding-top: 20px;
 }
 
 /* メイン */
@@ -55,6 +65,8 @@ header a img {
     margin-bottom: 20px;
 }
 
+
+
 /* おすすめチャンネル */
 .recommended-channels {
     margin-top: 40px;
@@ -68,8 +80,7 @@ header a img {
 
 /* チャンネル枠*/
 .channel {
-    background-color: #262626; /* ダークグレーのカード */
-    padding: 15px;
+
     margin-bottom: 15px;
     border-radius: 8px;
     display: flex;
@@ -116,3 +127,55 @@ header a img {
         margin-left: 0;
     }
 }
+
+
+
+
+
+
+/* 動画の横並び配置 */
+.live-stream-sub1 {
+    display: inline-block;
+      /* 横に3つ並ぶように幅を調整 */
+    padding-left: 120px;  /* 横の間隔 */
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+.live-stream-sub1 video {
+    width: 105%;  /* 各動画がコンテナにフィットする */
+      /* 角を丸くする */
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* 影をつける */
+}
+
+.live-stream-sub1 p {
+    text-align: center;
+    font-size: 1.2em;
+    color: #333;
+    margin-top: 10px;
+}
+.sub-title{
+    padding-left: 120px;
+    font-size: 25px;
+}
+
+.live-stream-sub {
+    display: inline-block;
+    padding-left: 20px;
+    vertical-align: top;
+    box-sizing: border-box;
+}
+
+.live-stream-sub video {
+    width: 105%;
+
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);  /* 影をつける */
+}
+
+.live-stream-sub p {
+    text-align: center;
+    font-size: 1.2em;
+    color: #333;
+    margin-top: 10px;
+}
+

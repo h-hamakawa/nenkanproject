@@ -1,0 +1,43 @@
+body {
+    font-family: Arial, sans-serif;
+    background-color: #f4f4f9;
+    color: #333;
+}
+
+.success-message-container {
+    width: 50%;
+    margin: 100px auto;
+    background: #fff;
+    padding: 30px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    text-align: center;
+}
+
+.success-text {
+    font-size: 1.5em;
+    color: #28a745;
+    margin-bottom: 20px;
+    font-weight: bold;
+}
+
+.link-container {
+    display: flex;
+    justify-content: center;
+    gap: 20px;
+}
+
+.back-link {
+    display: inline-block;
+    padding: 10px 20px;
+    background-color: #007bff;
+    color: white;
+    border-radius: 5px;
+    text-decoration: none;
+    font-size: 1.1em;
+    transition: background 0.3s;
+}
+
+.back-link:hover {
+    background-color: #0056b3;
+}

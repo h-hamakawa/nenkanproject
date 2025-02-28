@@ -1,0 +1,58 @@
+body { 
+    padding-top: 52px;
+    padding-left: 226px;
+     }
+.user-grid {
+    display: flex;
+    flex-wrap: wrap;
+    gap: 20px;
+}
+
+.user-card {
+    width: 250px;
+    background-color: #fff;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    padding: 15px;
+    text-align: center;
+}
+
+.user-icon {
+    width: 80px;
+    height: 80px;
+    border-radius: 50%;
+    margin-bottom: 10px;
+}
+
+.username {
+    font-size: 1.2em;
+    margin: 5px 0;
+}
+
+.username a {
+    text-decoration: none;
+    color: #9146FF;
+}
+
+.username a:hover {
+    text-decoration: underline;
+}
+
+.follower-count {
+    color: #777;
+    font-size: 0.9em;
+}
+
+.follow-button {
+    background-color: #9146FF;
+    color: #fff;
+    border: none;
+    padding: 5px 10px;
+    border-radius: 5px;
+    cursor: pointer;
+    margin-top: 10px;
+}
+
+.follow-button:hover {
+    background-color: #772ce8;
+}
